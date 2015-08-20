@@ -1,7 +1,28 @@
 <div class="col-xs-12 text-center">
   <h1><%= @cocktail.name %></h1>
 
-  <%= link_to "Delete", cocktail_path(@cocktail), method: :delete, class: "btn btn-danger" %>
-  <%= link_to "Back to list", cocktails_path, class: "btn btn-info" %>
+  <div class="col-xs-12">
+    <%= link_to "Delete", cocktail_path(@cocktail), method: :delete, class: "btn btn-danger" %>
+    <%= link_to "Back to list", cocktails_path, class: "btn btn-info" %>
+  </div>
+
+  <% @doses.each do |dose| %>
+    <div class="col-xs-6 text-center">
+      <h4><%= dose.description %></h4>
+      <p><%= dose.ingredient.name %></p>
+    </div>
+  <% end %>
+
+  <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+    <p>ajoutez une dose</p>
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.input :description %>
+      <%= f.input :cocktail_id, as: :hidden, input_html: { value: '@cocktail' } %>
+      <%= f.input :ingredient_id, collection: @ingredients, as: :select %>
+      <%= f.button :submit, class: 'btn btn-danger' %>
+    <% end %>
+  </div>
+
+
 </div>
 

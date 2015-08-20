@@ -1,0 +1,7 @@
+<p>ajoutez une dose</p>
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description %>
+    <%= f.input :cocktail_id, as: :hidden, input_html: { value: '@cocktail' } %>
+    <%= f.input :ingredient_id %>
+    <%= f.button :submit, class: 'btn btn-danger' %>
+  <% end %>
