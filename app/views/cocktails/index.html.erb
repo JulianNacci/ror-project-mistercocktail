@@ -1,0 +1,13 @@
+<div class="col-xs-12 text-center">
+  <h1>Nos supers cocktails</h1>
+</div>
+
+
+<% @cocktails.each do |cocktail| %>
+  <div class="col-xs-12 col-sm-4">
+  <%= link_to(cocktail) do %>
+    <h2><%= cocktail.name %></h2>
+    <p>De la bombe bb</p>
+  <% end %>
+  </div>
+<% end %>
