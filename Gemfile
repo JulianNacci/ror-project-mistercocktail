@@ -33,7 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 # gem front
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
 
