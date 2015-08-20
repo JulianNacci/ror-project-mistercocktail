@@ -7,4 +7,7 @@ class DosesController < ApplicationController
 
   def destroy
   end
+
+  private
+
 end
