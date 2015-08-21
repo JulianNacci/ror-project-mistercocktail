@@ -51,3 +51,13 @@ end
 gem 'rspec-rails', group: [ :test ]
 gem 'rails_12factor', group: :production
 gem 'puma',           group: :production
+
+# Upload d'image
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip'
+gem 'figaro'
+
+
+
+
+
